@@ -1,6 +1,6 @@
 # kit
 
-A Claude Code plugin with product thinking frameworks.
+A kit for AI agents.
 
 ## Installation
 

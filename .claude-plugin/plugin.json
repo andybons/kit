@@ -1,8 +1,8 @@
 {
   "name": "kit",
-  "description": "Product thinking toolkit with JTBD and Minto Pyramid frameworks",
-  "version": "1.0.0",
+  "description": "A kit for AI agents",
+  "version": "0.0.1",
   "author": {
-    "name": "Andy Bons"
+    "name": "Andy Bonventre"
   }
 }
