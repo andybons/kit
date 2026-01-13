@@ -1,0 +1,8 @@
+{
+  "name": "kit",
+  "description": "Product thinking toolkit with JTBD and Minto Pyramid frameworks",
+  "version": "1.0.0",
+  "author": {
+    "name": "Andy Bons"
+  }
+}
