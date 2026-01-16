@@ -1,0 +1,22 @@
+{
+  "name": "andybons-kit",
+  "owner": {
+    "name": "Andy Bonventre",
+    "email": "andybons@gmail.com"
+  },
+  "metadata": {
+    "description": "Personal kit of skills and tools for AI agents",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "kit",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/andybons/kit.git"
+      },
+      "description": "A kit for AI agents with skills for product thinking, UI development, and visual hierarchy",
+      "version": "0.0.1"
+    }
+  ]
+}
