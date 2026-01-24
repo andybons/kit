@@ -4,13 +4,12 @@ A kit for AI agents.
 
 ## Installation
 
-**Option 1: Add marketplace then install**
 ```bash
-claude /marketplace add https://github.com/andybons/kit.git
-claude /install kit
+npx add-skill andybons/kit
 ```
 
-**Option 2: Install directly**
+Or using Claude Code commands:
+
 ```bash
 claude /install https://github.com/andybons/kit.git
 ```
