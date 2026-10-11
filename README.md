@@ -42,3 +42,11 @@ Use for:
 - Applying the squint test to validate hierarchy
 
 Source: [Nielsen Norman Group](https://www.nngroup.com/articles/visual-hierarchy-ux-definition/)
+
+### go-guide
+
+Go code and API rules, one line each with its source: layout, naming, API design, errors, concurrency, testing, and comments.
+
+### architecture-review
+
+Whole-system review of a change: spec divergence, contracts, ownership, parity, structure, tests, and docs. Pairs with go-guide.
