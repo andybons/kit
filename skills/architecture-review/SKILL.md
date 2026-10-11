@@ -14,17 +14,17 @@ Read the repo's AGENTS.md for its gates, layering rules, and spec location. This
 A "yes" is a finding. Cite the spec as `path:line` and the code as `file:line`. A finding without a citation is an opinion; label it as one.
 
 1. **Spec.** Does the change differ from the spec? That is a blocker unless the same PR updates the spec and records a dated decision. A rationale in the PR body alone does not count.
-2. **Contracts and wire.** Do wire types, routes, and clients come from the one contract source? Is a type hand-written that is already generated? Does a fake, stub, or golden differ from the real component in shape, status, error body, or order?
+2. **Contracts and wire.** Do wire types, routes, and clients come from the one contract source? Is a type hand-written that is already generated? Is generated output regenerated in the same PR? Does a fake, stub, or golden differ from the real component in shape, status, error body, or order?
 3. **Error ownership.** Is there one error envelope and one code table? Are errors passed through unchanged, not re-shaped or matched by string?
-4. **Single writer.** Does each record, table, field, and route have one owner and one writer? Does the change add a second record, resolver, constant set, or implementation of a concept that has an owner? Name the owner.
+4. **Single writer.** Does each record, table, field, and route have one owner and one writer? Does the change add a second record, resolver, constant set, or implementation of a concept that has an owner? Search the tree for the existing one and name the owner.
 5. **Workaround on a workaround.** Does the change add a retry, poll, cache, flag, or special case over a boundary problem? Name the boundary that should move.
 6. **Parity.** When a system is replaced, does the new one keep the old behavior? A deliberate break needs a recorded decision. New code must not read or call anything the spec deletes.
 7. **Structure.**
-   - Layering: does an import cross a gate, or point from a lower layer up to a higher one? Is the interface declared in its consumer?
+   - Layering: does an import cross a gate, or point from a lower layer up to a higher one? Does the change widen an import rule without a spec line? Is policy in the transport, or does code branch on a provider or backend name? Is the interface declared in its consumer?
    - Duplicate types: is a type or concept defined again in another package?
-   - Package purpose and size: does the package keep one purpose? Did a file or function grow past a reason?
+   - Package purpose and size: does the package keep one purpose? Does a file pass about 1,000 lines or a function about 150 without a stated reason (unless the repo sets other limits)?
    - Logic in `cmd/`: is policy in a main package instead of a testable one?
-   - Grab-bag names: `util`, `common`, `helpers`, `types`, `api`.
+   - Grab-bag names: packages `util`, `common`, `misc`, `helpers`, `api`, `types`; files `types.go`, `interfaces.go`.
    - Go API rules: apply the `go-guide` skill to every new or changed exported API.
 8. **Tests.**
    - Each deleted test must cover only deleted code; a test deleted with live behavior still behind it is a regression.
@@ -34,9 +34,10 @@ A "yes" is a finding. Cite the spec as `path:line` and the code as `file:line`. 
 
 ## Reporting
 
+- Lead with architecture findings, then correctness findings.
 - Verify before you report: open the file, read the cited lines, and confirm the claim. Do not report from memory or from the diff alone.
 - State each finding as the question number, the spec line, the `file:line`, and the smallest change that restores the boundary.
-- Block only on scope, spec divergence, or regression. Rank a second source of truth, a read of a deleted surface, and an unrecorded divergence as blockers. Mark the rest as non-blocking with their cost if left.
+- Block on scope, unrecorded spec divergence, regression, a second source of truth, or a read of a deleted surface; block on a wrong layer only when it would be hard to move later. Mark the rest as non-blocking with their cost if left.
 - A correct finding is not a requirement; weigh its cost against its benefit.
 - Ignore pre-existing violations the change does not touch or worsen. Say so when the change touches one and leaves it as it was.
 - Do not restate the spec or list what held. When there is nothing, say "no architecture findings" and name the spec sections read.
