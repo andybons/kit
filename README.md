@@ -49,4 +49,4 @@ Go code and API rules, one line each with its source: layout, naming, API design
 
 ### architecture-review
 
-Whole-system review of a change: spec divergence, contracts, ownership, parity, structure, tests, and docs. Pairs with go-guide.
+Whole-system review of a change: spec divergence, contracts, ownership, parity, structure, tests, docs, and proportion. Pairs with go-guide.
