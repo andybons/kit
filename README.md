@@ -50,3 +50,17 @@ Go code and API rules, one line each with its source: layout, naming, API design
 ### architecture-review
 
 Whole-system review of a change: spec divergence, contracts, ownership, parity, structure, tests, docs, and proportion. Pairs with go-guide.
+
+## Mods
+
+### inflight
+
+A Claude Code mod that opens a pane of what is in flight: subagents (running, waiting or paused, failed), your open PRs with CI state and auto-merge, `deploy.yml` and `roll-golden-warmpool.yml` runs that are running or failed in the last 6 hours, and background shell tasks. It polls `gh` read-only every 45 seconds. Requires Claude Code 2.1.287 or later and an authenticated `gh`.
+
+Install:
+
+```
+/plugin install inflight --marketplace andybons/kit
+```
+
+Open the pane with `/inflight`. It also opens by itself in a terminal 144 columns wide or more. Below that width, run `/inflight`; the pane then sits above the prompt. Set the repositories in `/config` (`repos`, default `meetneptune/boxes,majorcontext/harness`; `deploy_repo`, default `meetneptune/boxes`).

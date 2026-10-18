@@ -17,6 +17,12 @@
       },
       "description": "A kit for AI agents with skills for product thinking, UI development, visual hierarchy, Go code, and architecture review",
       "version": "0.0.1"
+    },
+    {
+      "name": "inflight",
+      "source": "./mods/inflight",
+      "description": "A Claude Code mod: a pane of subagents, your open PRs and their CI, deploys, and background shells",
+      "version": "0.1.0"
     }
   ]
 }

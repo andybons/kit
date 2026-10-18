@@ -1,0 +1,21 @@
+{
+  "name": "inflight",
+  "version": "0.1.0",
+  "description": "A pane of what is in flight: subagents, your open PRs and their CI, deploys, and background shells.",
+  "author": { "name": "Andy Bonventre" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "repos": {
+      "type": "string",
+      "title": "PR repositories",
+      "description": "Comma-separated owner/repo list. Open PRs you authored in these repositories are shown.",
+      "default": "meetneptune/boxes,majorcontext/harness"
+    },
+    "deploy_repo": {
+      "type": "string",
+      "title": "Deploy repository",
+      "description": "owner/repo whose deploy.yml and roll-golden-warmpool.yml runs are shown.",
+      "default": "meetneptune/boxes"
+    }
+  }
+}

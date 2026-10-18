@@ -12,6 +12,8 @@ This is a kit repository containing reusable AI assistant extensions: skills, ho
   - Each skill lives in its own folder named after the skill (e.g., `skills/product-thinking/`)
   - `SKILL.md` - Main skill file with YAML frontmatter (`name`, `description`) and instructions
   - `references/` - Supporting documentation the skill references
+- `mods/` - Claude Code mods, each its own plugin folder listed in `.claude-plugin/marketplace.json`
+  - Check with `claude plugin validate mods/<name>` and `claude plugin test mods/<name>`
 
 ## Skill File Format
 
