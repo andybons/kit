@@ -38,7 +38,7 @@ State each limit as an idea. Map it to a tool the repo already runs. Add a tool 
 4. Let a count fall. Never let it rise.
 5. Delete an exceptions entry when its file meets the limit.
 
-Count test-to-code ratio on net added lines. Match history words as phrases in comments only, and tune on the repo's own comments. Plant one violation per limit to prove the tool fires.
+Count test-to-code ratio on net added lines. Match history words as phrases in comments only, and tune on the repo's own comments. Plant one violation per limit to prove the tool fires. A gate fails when its input is missing, such as an absent base ref; it never passes silently.
 
 A limit that fails every existing file on the first run is wrong. Start with the baseline.
 
