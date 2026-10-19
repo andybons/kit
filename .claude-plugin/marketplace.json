@@ -15,8 +15,8 @@
         "source": "url",
         "url": "https://github.com/andybons/kit.git"
       },
-      "description": "A kit for AI agents with skills for product thinking, UI development, visual hierarchy, Go code, and architecture review",
-      "version": "0.0.1"
+      "description": "A kit for AI agents with skills for product thinking, UI development, visual hierarchy, Go code, architecture review, and codebase cleanup",
+      "version": "0.0.2"
     },
     {
       "name": "inflight",
