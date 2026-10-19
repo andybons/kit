@@ -51,6 +51,10 @@ Go code and API rules, one line each with its source: layout, naming, API design
 
 Whole-system review of a change: spec divergence, contracts, ownership, parity, structure, tests, docs, and proportion. Pairs with go-guide.
 
+### codebase-cleanup
+
+Bring a drifted codebase back into shape, then keep it there: whole-architecture review, test and comment sweeps, a limits ratchet against the merge base, and a bounded maintenance loop with independent review. Pairs with architecture-review.
+
 ## Mods
 
 ### inflight
