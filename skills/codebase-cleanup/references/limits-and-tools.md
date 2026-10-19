@@ -22,9 +22,9 @@ State each limit as an idea. Map it to a tool the repo already runs. Add a tool 
 |---|---|---|
 | File size | `max-lines` (oxlint, ESLint) | a repo gate test (a test that walks the tree) |
 | Function size | `max-lines-per-function` | a repo gate test (a test that walks the tree) |
-| Existing violations | ESLint bulk suppressions, or Betterer | exceptions file read by the gates package |
+| Existing violations | ESLint bulk suppressions, or Betterer | an exceptions file read by the repo gate test |
 | Dead code, unused exports and dependencies | knip | `staticcheck`, `deadcode` |
-| Boundaries and cycles | dependency-cruiser | gates import-direction test |
+| Boundaries and cycles | dependency-cruiser | an import-direction repo gate test |
 | Duplication | jscpd | `dupl` or jscpd |
 | Comment share, history ban | small lint rule or repo script run by the lint command | comment lint run in CI |
 | Rule has a failing test | mutate the code by hand, or Stryker | `go-mutesting`, or by hand |
