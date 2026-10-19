@@ -34,8 +34,8 @@ State each limit as an idea. Map it to a tool the repo already runs. Add a tool 
 
 1. Record the baseline: every current violation, by file.
 2. Fail a new file that breaks a limit.
-3. Fail a touched file whose measured value rose against the merge base: its line count, each function's length, or its violation count. An improvement elsewhere never offsets it.
-4. Let a value fall. Never let it rise.
+3. Fail a touched file that newly breaks a limit. For a file or function already over a limit, fail when its measured value rose against the merge base: line count, function length, or violation count. An improvement elsewhere never offsets it.
+4. For an over-limit file, let a value fall. Never let it rise.
 5. Delete an exceptions entry when its file meets the limit.
 
 Count test-to-code ratio on net added lines. Match history words as phrases in comments only, and tune on the repo's own comments. Plant one violation per limit to prove the tool fires. A gate fails when its input is missing, such as an absent base ref; it never passes silently.
