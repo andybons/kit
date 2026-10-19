@@ -12,7 +12,7 @@ State each limit as an idea. Map it to a tool the repo already runs. Add a tool 
 | Test-to-code ratio | Added test lines at or below added code lines |
 | History in comments | None: dates, incidents, PR or issue numbers, names, a doc path cited to justify the code, "no longer", "now", "instead of" |
 | Test placement | Each test lives where the repo says tests live |
-| Exceptions file | One path per line, one reason each; entries are removed, never added without a reason |
+| Exceptions file | One path per line, one reason each; the first baseline lists every entry, and later changes only remove entries |
 | Import boundaries | A baseline of known violations that can only shrink |
 | Merge base ratchet | New files meet every limit; a touched file does not get worse |
 
@@ -34,8 +34,8 @@ State each limit as an idea. Map it to a tool the repo already runs. Add a tool 
 
 1. Record the baseline: every current violation, by file.
 2. Fail a new file that breaks a limit.
-3. Fail a touched file whose count of violations rose against the merge base.
-4. Let a count fall. Never let it rise.
+3. Fail a touched file whose measured value rose against the merge base: its line count, each function's length, or its violation count. An improvement elsewhere never offsets it.
+4. Let a value fall. Never let it rise.
 5. Delete an exceptions entry when its file meets the limit.
 
 Count test-to-code ratio on net added lines. Match history words as phrases in comments only, and tune on the repo's own comments. Plant one violation per limit to prove the tool fires. A gate fails when its input is missing, such as an absent base ref; it never passes silently.
